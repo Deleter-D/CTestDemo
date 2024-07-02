@@ -23,8 +23,8 @@ if (WITH_ROCM)
     add_definitions(-DWITH_ROCM)
 elseif (WITH_CUDA)
     find_package(CUDA REQUIRED)
-    set(CUDNN_INCLUDE_DIR /usr/include)  # Adjust this to your cuDNN include path
-    set(CUDNN_LIBRARY /usr/lib/libcudnn.so)  # Adjust this to your cuDNN library path
+    find_library(CUDNN_LIBRARY libcudnn.so HINTS /usr/lib REQUIRED)
+    find_path(CUDNN_INCLUDE_DIR cudnn.h PATHS /usr/include)
     set(MY_DNN_INCLUDE_DIRS ${CUDA_INCLUDE_DIRS} ${CUDNN_INCLUDE_DIR})
     set(MY_DNN_LIBRARIES ${CUDA_LIBRARIES} ${CUDNN_LIBRARY})
     add_definitions(-DWITH_CUDA)
