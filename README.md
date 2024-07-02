@@ -5,12 +5,14 @@
 - OS: Ubuntu 20.04.6 LTS
 - CUDA: 11.8
 - CUDNN: 8.9
+- CMake: 3.27.7
 
 ### ROCm平台
 
 - OS: kylin V10
 - DTK: 23.10.1
 - MiOpen: 2.15.3
+- CMake: 3.27.7
 
 ## 问题现象
 
